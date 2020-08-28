@@ -14,7 +14,7 @@ class App extends Component {
     latestNews : [],
     cryptoEx : [],
     basicFin:[],
-    latest: '',
+    latest: '{"data":[{"p":503.3,"s":"AAPL","t":1598628510519,"v":15}],"type":"trade"}',
     symbol:'AAPL'
     }
 
@@ -64,7 +64,7 @@ socket.addEventListener('message', function (event) {
   function handleChange(event){
     var string = event.data;
     this.setState({latest:string});
-    console.log(string);
+    //console.log(string);
   }
 
   let handle = handleChange.bind(this);
