@@ -51,10 +51,10 @@ class App extends Component {
 
 // Connection opened -> Subscribe (grabs the current price for the symbol provided - use this for the graphs?)
 socket.addEventListener('open', function (event) {
-  socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
+  socket.send(JSON.stringify({'type':'subscribe', 'symbol': this.state.symbol}))
   //socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
   //socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
-});
+}.bind(this));
 
 // Listen for messages
 socket.addEventListener('message', function (event) {
@@ -71,7 +71,6 @@ socket.addEventListener('message', function (event) {
   }
 
   let handle = handleChange.bind(this);
-  
 }
 
 //Nasdaq symbol
@@ -88,7 +87,7 @@ socket.addEventListener('message', function (event) {
             <tr><th><h1>SimplData</h1></th></tr>
                <tr><th>Symbols</th></tr>
              {this.state.stockData.map((number) =>
-             <tr><td><button class='myButton' disabled>{number.symbol}</button></td></tr>
+             <tr><td><button className='myButton' onClick={(e) => {this.setState({symbol: number.symbol})}}>{number.symbol}</button></td></tr>
              )}
              </table>
              <table className="table3">
