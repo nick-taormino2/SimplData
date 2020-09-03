@@ -46,7 +46,6 @@ body{
 
 .table2{
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-  border: 1px solid black;
   width: min-content;
   font: 2em sans-serif;
   margin-right: auto;
@@ -56,7 +55,6 @@ body{
 
 .table{
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-  border: 1px solid black;
   width: min-content;
   font: .75em sans-serif;
   margin-right: auto;

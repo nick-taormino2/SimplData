@@ -84,6 +84,8 @@ socket.addEventListener('message', function (event) {
            <div className="">
              <div className="Main">
                <table className="table2">
+               <tr><th>Welcome to</th></tr>
+            <tr><th><h1>SimplData</h1></th></tr>
                <tr><th>Symbols</th></tr>
              {this.state.stockData.map((number) =>
              <tr><td><button class='myButton' disabled>{number.symbol}</button></td></tr>
