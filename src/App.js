@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, CardLink, Button, ButtonGroup } from 'reactstrap';
+  CardTitle, CardSubtitle, CardLink} from 'reactstrap';
 
 class App extends Component {
 
@@ -14,7 +14,7 @@ class App extends Component {
     latestNews : [],
     cryptoEx : [],
     basicFin:[],
-    latest: '{"data":[{"p":503.3,"s":"AAPL","t":1598628510519,"v":15}],"type":"trade"}',
+    latest: '{"data":[{"p":100,"s":"AAPL-Not up to date","t":1598628510519,"v":15}],"type":"trade"}',
     symbol:'AAPL'
     }
 
@@ -51,7 +51,7 @@ class App extends Component {
 
 // Connection opened -> Subscribe (grabs the current price for the symbol provided - use this for the graphs?)
 socket.addEventListener('open', function (event) {
-  socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
+  //socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
   //socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
   //socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
 });
@@ -63,7 +63,10 @@ socket.addEventListener('message', function (event) {
 
   function handleChange(event){
     var string = event.data;
-    this.setState({latest:string});
+    if(!string.includes("ping"))
+    {
+      this.setState({latest:string});
+    }
     //console.log(string);
   }
 
@@ -82,16 +85,13 @@ socket.addEventListener('message', function (event) {
              <div className="Main">
                <table className="table2">
                <tr><th>Symbols</th></tr>
-               <ButtonGroup vertical>
              {this.state.stockData.map((number) =>
-             <tr><td><Button onClick="this.setState({symbol: {numnber.symbol}})">{number.symbol}</Button></td></tr>
+             <tr><td><button class='myButton' disabled>{number.symbol}</button></td></tr>
              )}
-             </ButtonGroup>
              </table>
              <table className="table3">
-             <tr><td>Stock: {this.state.latest.replace(/{/g,"").replace("[","").replace(/}/g,"").replace("]","").replace(/"/g,'').split(",")[1].replace("s:","")}</td></tr>
+             <tr><td>Stock:<br/>{this.state.latest.replace(/{/g,"").replace("[","").replace(/}/g,"").replace("]","").replace(/"/g,'').split(",")[1].replace("s:","")}</td><td>Volume: {this.state.latest.replace(/{/g,"").replace("[","").replace(/}/g,"").replace("]","").replace(/"/g,'').split(",")[3].replace("v:","")}</td></tr>
              <tr><td><h1 className="green">Price: {this.state.latest.replace(/{/g,"").replace("[","").replace(/}/g,"").replace("]","").replace(/"/g,'').split(",")[0].replace("data:p:","")}</h1></td></tr>
-             <tr><td>Volume: {this.state.latest.replace(/{/g,"").replace("[","").replace(/}/g,"").replace("]","").replace(/"/g,'').split(",")[3].replace("v:","")}</td></tr>
              </table>
                <table className="table">
                  <tr><th>Latest Stories</th></tr>

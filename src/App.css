@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-color: #778899;
+}
+
+body{
+  background-color: #708090;
+  color: #FFFAF0;
 }
 
 .App-logo {
@@ -25,6 +31,7 @@
 }
 
 .table3{
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   width: min-content;
   font: 1em sans-serif;
   margin-right: auto;
@@ -33,20 +40,22 @@
 }
 
 .green{
-  color: green;
-  font: 5em sans-serif;
+  color: #32CD32;
+  font: 10em sans-serif;
 }
 
 .table2{
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   border: 1px solid black;
   width: min-content;
-  font: .75em sans-serif;
+  font: 2em sans-serif;
   margin-right: auto;
   margin-left: auto;
   float: left;
 }
 
 .table{
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   border: 1px solid black;
   width: min-content;
   font: .75em sans-serif;
@@ -66,4 +75,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+.myButton {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+  width: 100%;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
