@@ -51,7 +51,7 @@ class App extends Component {
 
 // Connection opened -> Subscribe (grabs the current price for the symbol provided - use this for the graphs?)
 socket.addEventListener('open', function (event) {
-  //socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
+  socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
   //socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
   //socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
 });
