@@ -6,6 +6,23 @@ body{
   color: #708090;
 }
 
+.search {
+  padding: 10px;
+  width: 50%;
+  font-size: 20px;
+  border-width: 0px;
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-style: solid;
+  border-radius: 50px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+}
+.search:focus {
+  outline:none;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -25,6 +42,15 @@ body{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #282c34;
+}
+
+.table4{
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  width: min-content;
+  font: 2em sans-serif;
+  margin-right: auto;
+  margin-left: auto;
+  float: right;
 }
 
 .table3{
@@ -52,11 +78,8 @@ body{
 
 .table{
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-  width: min-content;
-  font: .75em sans-serif;
-  margin-right: auto;
-  margin-left: auto;
-  float: right;
+  width: fit-content;
+  font: 1em sans-serif;
 }
 
 .App-link {
@@ -91,3 +114,6 @@ body{
 	position:relative;
 	top:1px;
 }
+
+
+
