@@ -15,7 +15,7 @@ class App extends Component {
   this.state = {
     priceTar: [],
     comp: [],
-    latest: '{"data":[{"p":Market Closed,"s":"AAPL-Not up to date","t":1598628510519,"v":0}],"type":"trade"}',
+    latest: '{"data":[{"p":Awaiting Update,"s":"AAPL-Not up to date","t":1598628510519,"v":0}],"type":"trade"}',
     symbol: window.location.href.split("/")[3]
     }
 
